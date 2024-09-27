@@ -28,7 +28,7 @@ document.querySelectorAll('.cell').forEach(cell => {
         const cellIndex = cell.id - 1;
         if (board[cellIndex] === '' && !checkWinner()) {
             board[cellIndex] = currentPlayer;
-            cell.textContent = currentPlayer;
+            cell.textContent = currentPlayer === 'X' ? 'X' : 'O'; // Update text to X or O
             if (checkWinner()) {
                 document.querySelector('.message').textContent = `${currentPlayer === 'X' ? player1 : player2} congratulations you won!`;
             } else {
